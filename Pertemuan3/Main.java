@@ -1,10 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        // Create a new TicketMachine object with a ticket price of 5
-        TicketMachine a = new TicketMachine(5);
+        TicketMachine a = new TicketMachine(100);
 
-        a.insertMoney(0);
+        a.insertMoney(1000);
+        System.out.println("Current Balance : " + a.getBalance());
+        System.out.println("The ticket price : " + a.getPrice());
+        
         a.printTicket();
-        System.out.println("Balance : " + a.getBalance());
+        a.insertMoney(1000);
+        System.out.println("Current Balance : " + a.getBalance());
     }
 }

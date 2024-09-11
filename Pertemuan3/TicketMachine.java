@@ -27,6 +27,7 @@ public class TicketMachine {
         }else{
             System.out.println("Invalid amount");
         }
+        System.out.println("You inserted : "+amount);
     }
 
     // Getter method to get ticket price
@@ -48,13 +49,19 @@ public class TicketMachine {
         // Check if the balance is sufficient to purchase the ticket
         if(balance >= price){
             // Print the ticket and update the total and balance
+            System.out.println("--------------------------------------");  
+            System.out.println("              Ticket ");
+            System.out.println("--------------------------------------");  
             System.out.println("Ticket Price : " + price);
+            System.out.println("Thank you for your purchase!!");
+            System.out.println("--------------------------------------");  
+
             total += price;
             balance -= price;
         }else{
             // If not enough money, print an error message and the required amount
             System.out.println("Not enough money");
-            System.out.println("You must insert at least " + (price - balance));
+            System.out.println("You must insert at least " + (price - balance) + " more");
         }
     }
 }
