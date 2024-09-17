@@ -1,5 +1,3 @@
-package Pertemuan4;
-
 public class NumberDisplay {
     private int limit, value;
 

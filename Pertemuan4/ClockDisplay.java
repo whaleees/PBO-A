@@ -1,5 +1,3 @@
-package Pertemuan4;
-
 public class ClockDisplay {
     private NumberDisplay hours, minutes;
     private String displayString;
