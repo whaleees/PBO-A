@@ -9,6 +9,16 @@ public class ClockDisplay{
         seconds = new NumberDisplay(60);
     }
 
+    public void timeTick(){
+        seconds.increment();
+        if(seconds.getValue() == 0){
+            minutes.increment();
+            if(minutes.getValue() == 0){
+                hours.increment();
+            }
+        }
+    }
+
     public void setTime(int hour, int minute, int second){
         hours.setValue(hour);
         minutes.setValue(minute);

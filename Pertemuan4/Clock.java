@@ -24,13 +24,7 @@ public class Clock extends JFrame{
 
         Timer timer = new Timer(1000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                clock.seconds.increment();
-                if(clock.seconds.getValue() == 0){
-                    clock.minutes.increment();
-                    if(clock.minutes.getValue() == 0){
-                        clock.hours.increment();
-                    }
-                }
+                clock.timeTick();
                 timeLabel.setText(clock.getTime()); 
             }       
         });
