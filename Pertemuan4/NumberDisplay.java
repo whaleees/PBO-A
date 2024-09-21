@@ -1,8 +1,8 @@
 public class NumberDisplay {
     private int limit, value;
 
-    public NumberDisplay(int reset){
-        limit = reset;
+    public NumberDisplay(int limit){
+        this.limit = limit;
         value = 0;
     }
 

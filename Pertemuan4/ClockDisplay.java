@@ -1,38 +1,21 @@
-public class ClockDisplay {
-    private NumberDisplay hours, minutes;
-    private String displayString;
-    
-    private void updateDisplay(){
-        displayString = hours.getDisplayValue() + ":" + minutes.getDisplayValue();
-    }
+public class ClockDisplay{
+    NumberDisplay hours;
+    NumberDisplay minutes;
+    NumberDisplay seconds;
 
     public ClockDisplay(){
         hours = new NumberDisplay(24);
         minutes = new NumberDisplay(60);
-
-        updateDisplay();
+        seconds = new NumberDisplay(60);
     }
 
-    public ClockDisplay(int hour, int minute){
-        hours = new NumberDisplay(24);
-        minutes = new NumberDisplay(60);
+    public void setTime(int hour, int minute, int second){
         hours.setValue(hour);
         minutes.setValue(minute);
-    }
-
-    public void timeTick(){
-        minutes.increment();
-        if(minutes.getValue() == 0) hours.increment();
-        updateDisplay();
-    }
-
-    public void setTime(int hour, int minute){
-        hours.setValue(hour);
-        minutes.setValue(minute);
-        updateDisplay();
+        seconds.setValue(second);
     }
 
     public String getTime(){
-        return displayString;
+        return hours.getDisplayValue() + ":" + minutes.getDisplayValue() + ":" + seconds.getDisplayValue();
     }
 }
