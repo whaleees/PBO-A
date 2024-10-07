@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        System.out.println("\nMusic Organizer Program\n");
         MusicOrganizer organizer = new MusicOrganizer();
 
         organizer.addTrack("Seandainya", "Vierra", 300);
