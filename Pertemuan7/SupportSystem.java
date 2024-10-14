@@ -11,7 +11,6 @@ public class SupportSystem
         responder = new Responder();
     }
 
-    
     public void start()
     {
         boolean finished = false;
@@ -19,6 +18,7 @@ public class SupportSystem
         printWelcome();
 
         while(!finished) {
+            System.out.print("\n> ");
             HashSet<String> input = reader.getInput();
 
             if(input.contains("bye")) {
@@ -34,7 +34,9 @@ public class SupportSystem
 
     private void printWelcome()
     {
-        System.out.println("\nWelcome to the Lala Technical Support System.");
+        System.out.println();
+        System.out.println(responder.getTimeBasedGreeting());
+        System.out.println("\nSelamat Datang di Lala Technical Support System.");
         System.out.println();
         System.out.println("Please tell us about your problem.");
         System.out.println("We will assist you with any problem you might have.");
