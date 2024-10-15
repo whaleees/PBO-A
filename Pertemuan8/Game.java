@@ -93,4 +93,9 @@ public class Game {
         System.out.println("You are lost. You are alone.");
         System.out.println("Your command words are: go quit help");
     }
+
+    public static void main(String[] args) {
+        Game game = new Game();
+        game.play();
+    }
 }
