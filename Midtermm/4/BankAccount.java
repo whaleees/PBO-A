@@ -5,19 +5,11 @@ public class BankAccount {
         saldo = 0;
     }
 
-    public double cekSaldo(){
+    public double getSaldo(){
         return saldo;
     }
 
-    public void depositSaldo(double saldo){
-        this.saldo += saldo;
-    }
-
-    public void withdrawSaldo(double saldo){
-        if(this.saldo >= saldo){
-            this.saldo -= saldo;
-        }else{
-            System.out.println("Saldo insuficiente");
-        }
+    public void setSaldo(double saldo){
+        this.saldo = saldo;
     }
 }

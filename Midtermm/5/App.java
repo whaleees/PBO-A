@@ -15,8 +15,10 @@ public class App {
         //Fitur B
         Penumpang a = new Penumpang("kresna", 15);
         Penumpang b = new Penumpang("budi", 20);
+        Penumpang c = new Penumpang("agus", 25);
         trip.tambahPenumpang(a);
         trip.tambahPenumpang(b);
+        trip.tambahPenumpang(c);
         trip.cetakDaftarPenumpang();
 
         //Fitur C
