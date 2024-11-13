@@ -7,7 +7,15 @@ public class Main {
         Ticket firstClass = new FirstClassTicket(baseFare);
 
         System.out.println("Economy Ticket Fare: $" + economy.calculateFare());
-        System.out.println("Business Ticket Fare: $" + business.calculateFare());
-        System.out.println("First Class Ticket Fare: $" + firstClass.calculateFare());
-    }    
+        System.out.println("Facilities: " + economy.getFacilities());
+        System.out.println("Baggage: " + economy.getBaggageAllowance());
+
+        System.out.println("\nBusiness Ticket Fare: $" + business.calculateFare());
+        System.out.println("Facilities: " + business.getFacilities());
+        System.out.println("Baggage: " + business.getBaggageAllowance());
+
+        System.out.println("\nFirst Class Ticket Fare: $" + firstClass.calculateFare());
+        System.out.println("Facilities: " + firstClass.getFacilities());
+        System.out.println("Baggage: " + firstClass.getBaggageAllowance());
+    }
 }
