@@ -20,36 +20,6 @@ public class SalesItem {
         return price;
     }
 
-    public int getNumberOfComments() {
-        return comments.size();
-    }
-
-    public boolean addComment(String author, String text, int rating) {
-        if (ratingInvalid(rating) || findCommentByAuthor(author) != null) {
-            return false;
-        }
-        comments.add(new Comment(author, text, rating));
-        return true;
-    }
-
-    public void removeComment(int index) {
-        if (index >= 0 && index < comments.size()) {
-            comments.remove(index);
-        }
-    }
-
-    public void upvoteComment(int index) {
-        if (index >= 0 && index < comments.size()) {
-            comments.get(index).upvote();
-        }
-    }
-
-    public void downvoteComment(int index) {
-        if (index >= 0 && index < comments.size()) {
-            comments.get(index).downvote();
-        }
-    }
-
     public void showInfo() {
         System.out.println("*** " + name + " ***");
         System.out.println("Price: " + priceString(price));
@@ -72,11 +42,11 @@ public class SalesItem {
         }
         return best;
     }
-
+    
     private boolean ratingInvalid(int rating) {
         return rating < 0 || rating > 5;
     }
-
+    
     private Comment findCommentByAuthor(String author) {
         for (Comment comment : comments) {
             if (comment.getAuthor().equals(author)) {
@@ -84,6 +54,36 @@ public class SalesItem {
             }
         }
         return null;
+    }
+    
+    public int getNumberOfComments() {
+        return comments.size();
+    }
+    
+    public boolean addComment(String author, String text, int rating) {
+        if (ratingInvalid(rating) || findCommentByAuthor(author) != null) {
+            return false;
+        }
+        comments.add(new Comment(author, text, rating));
+        return true;
+    }
+    
+    public void removeComment(int index) {
+        if (index >= 0 && index < comments.size()) {
+            comments.remove(index);
+        }
+    }
+    
+    public void upvoteComment(int index) {
+        if (index >= 0 && index < comments.size()) {
+            comments.get(index).upvote();
+        }
+    }
+    
+    public void downvoteComment(int index) {
+        if (index >= 0 && index < comments.size()) {
+            comments.get(index).downvote();
+        }
     }
 
     private String priceString(int price) {
