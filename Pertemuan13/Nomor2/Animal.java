@@ -13,39 +13,44 @@ public abstract class Animal {
         this.alive = true;
     }
 
-    public abstract void act(List<Animal> newAnimals);
-
+    
     protected void incrementAge() {
         age++;
         if (age > getMaxAge()) {
             setDead();
         }
     }
-
+    
     public boolean canBreed() {
         return age >= getBreedingAge();
     }
-
+    
     protected void setDead() {
         alive = false;
         if (field != null && location != null) {
             field.clear(location);
-            location = null;
-            field = null;
         }
     }
-
+    
     public boolean isAlive() {
         return alive;
     }
-
+    
     protected int getRandomAge() {
         return Randomizer.getRandom().nextInt(getMaxAge());
     }
-
+    
     protected void setLocation(Location newLocation) {
-        this.location = newLocation;
+        if (field != null && location != null) {
+            field.clear(location);
+        }
+        location = new Location(newLocation.getRow(), newLocation.getCol());
+        if (field != null) {
+            field.place(this, location);
+        }
     }
+
+    public abstract void act(List<Animal> newAnimals);
 
     protected abstract int getBreedingAge();
 

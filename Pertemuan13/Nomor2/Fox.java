@@ -3,8 +3,7 @@ import java.util.List;
 public class Fox extends Animal {
     private static final int BREEDING_AGE = 5;
     private static final int MAX_AGE = 15;
-    private static final double BREEDING_PROBABILITY = 0.1;
-    private static final int MAX_LITTER_SIZE = 4;
+    private static final int MAX_LITTER_SIZE = 2;
     private static final int RABBIT_FOOD_VALUE = 9;
 
     private int foodLevel; // Tracks hunger
@@ -54,7 +53,7 @@ public class Fox extends Animal {
         }
         return null;
     }
-
+    
     private void giveBirth(List<Animal> newAnimals) {
         if (canBreed()) {
             List<Location> freeLocations = field.getFreeAdjacentLocations(location);
@@ -64,7 +63,7 @@ public class Fox extends Animal {
                 newAnimals.add(new Fox(false, field, loc));
             }
         }
-    }
+    }    
 
     @Override
     protected int getBreedingAge() {

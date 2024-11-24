@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        Manusia manusia = new Manusia();
-        Hewan hewan = new Hewan();
-        Tumbuhan tumbuhan = new Tumbuhan();
+        MakhlukHidup manusia = new Manusia();
+        MakhlukHidup hewan = new Hewan();
+        MakhlukHidup tumbuhan = new Tumbuhan();
 
         System.out.println("Manusia:");
         manusia.makan();

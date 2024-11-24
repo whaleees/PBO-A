@@ -38,41 +38,46 @@ public class Simulator {
 
     public void simulateOneStep() {
         step++;
-        List<Rabbit> newRabbits = new ArrayList<>();
+    
+        List<Animal> newAnimals = new ArrayList<>();
+    
         for (Iterator<Rabbit> it = rabbits.iterator(); it.hasNext(); ) {
             Rabbit rabbit = it.next();
-            rabbit.run(newRabbits);
+            rabbit.act(newAnimals); 
             if (!rabbit.isAlive()) {
                 it.remove();
             }
         }
-
-        List<Fox> newFoxes = new ArrayList<>();
+    
         for (Iterator<Fox> it = foxes.iterator(); it.hasNext(); ) {
             Fox fox = it.next();
-            fox.hunt(newFoxes);
+            fox.act(newAnimals); 
             if (!fox.isAlive()) {
                 it.remove();
             }
         }
-
-        rabbits.addAll(newRabbits);
-        foxes.addAll(newFoxes);
+    
+        for (Animal animal : newAnimals) {
+            if (animal instanceof Rabbit) {
+                rabbits.add((Rabbit) animal);
+            } else if (animal instanceof Fox) {
+                foxes.add((Fox) animal);
+            }
+        }
     }
-
+    
     public void reset() {
         step = 0;
         rabbits.clear();
         foxes.clear();
-        field.clear();
+        field.clear(); 
         populate();
         printField();
     }
-
+    
     private void populate() {
         Random rand = new Random();
-        field.clear();
-
+        field.clear(); // Membersihkan grid sebelum populasi
         for (int row = 0; row < field.getHeight(); row++) {
             for (int col = 0; col < field.getWidth(); col++) {
                 if (rand.nextDouble() <= FOX_CREATION_PROBABILITY) {
@@ -89,6 +94,7 @@ public class Simulator {
             }
         }
     }
+    
 
     private void printField() {
         System.out.println("Step: " + step);

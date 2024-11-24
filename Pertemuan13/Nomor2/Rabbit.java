@@ -3,7 +3,6 @@ import java.util.List;
 public class Rabbit extends Animal {
     private static final int BREEDING_AGE = 5;
     private static final int MAX_AGE = 40;
-    private static final double BREEDING_PROBABILITY = 0.12;
     private static final int MAX_LITTER_SIZE = 4;
 
     public Rabbit(boolean randomAge, Field field, Location location) {
@@ -22,7 +21,7 @@ public class Rabbit extends Animal {
                 setDead();
             }
         }
-    }
+    }    
 
     private void giveBirth(List<Animal> newAnimals) {
         if (canBreed()) {

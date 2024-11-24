@@ -1,4 +1,3 @@
-
 public class Hewan extends MakhlukHidup {
     @Override
     public void makan() {

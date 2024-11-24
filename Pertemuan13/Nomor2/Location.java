@@ -31,11 +31,6 @@ public class Location {
     }
 
     @Override
-    public int hashCode() {
-        return row * 31 + col;
-    }
-
-    @Override
     public String toString() {
         return "(" + row + ", " + col + ")";
     }

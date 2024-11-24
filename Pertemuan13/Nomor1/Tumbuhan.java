@@ -1,4 +1,3 @@
-
 public class Tumbuhan extends MakhlukHidup {
     @Override
     public void makan() {

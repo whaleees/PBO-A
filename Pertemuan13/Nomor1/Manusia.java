@@ -1,4 +1,3 @@
-
 public class Manusia extends MakhlukHidup {
     @Override
     public void makan() {
